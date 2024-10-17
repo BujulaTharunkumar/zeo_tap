@@ -1,0 +1,11 @@
+
+
+
+<h1>Combine Rules</h1>
+<form method="POST">
+    {% csrf_token %}
+    {% for rule in rules %}
+        <input type="checkbox" name="rules" value="{{ rule.id }}"> {{ rule.name }} <br>
+    {% endfor %}
+    <button type="submit">Combine</button>
+</form>

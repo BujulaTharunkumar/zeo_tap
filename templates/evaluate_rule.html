@@ -1,0 +1,17 @@
+
+
+
+<h1>Evaluate Rule</h1>
+<form method="POST">
+    {% csrf_token %}
+    <select name="rule_id">
+        {% for rule in rules %}
+            <option value="{{ rule.id }}">{{ rule.name }}</option>
+        {% endfor %}
+    </select>
+    <label>Age:</label><input type="text" name="age"><br>
+    <label>Department:</label><input type="text" name="department"><br>
+    <label>Salary:</label><input type="text" name="salary"><br>
+    <label>Experience:</label><input type="text" name="experience"><br>
+    <button type="submit">Evaluate</button>
+</form>
